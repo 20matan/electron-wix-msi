@@ -346,6 +346,7 @@ export class MSICreator {
       preArgs.unshift(`-cultures:${this.cultures}`);
     }
     preArgs.unshift(`-sval`)
+    console.log('preArgs = ', preArgs)
 
     const { code, stderr, stdout } = await spawnPromise(binary, [ ...preArgs, input ], {
       env: process.env,
