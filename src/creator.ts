@@ -345,6 +345,7 @@ export class MSICreator {
     if (type === 'msi' && this.cultures) {
       preArgs.unshift(`-cultures:${this.cultures}`);
     }
+    preArgs.unshift(`-sval`)
 
     const { code, stderr, stdout } = await spawnPromise(binary, [ ...preArgs, input ], {
       env: process.env,
